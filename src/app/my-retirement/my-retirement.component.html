@@ -1,0 +1,63 @@
+<div class="container">
+  <h3>My Retirement</h3>
+  <mat-card>
+    <div class="content-header grid-container">
+      <div class="header-title">Manage</div>
+      <button pButton pRipple type="button" label="Enquire History"
+        class="table-button p-button-outlined p-button-secondary"></button>
+      <hr>
+    </div>
+    <div class="content-body">
+      <div class="grid-container">
+        <div class="grid-item">
+          Creation Date: <label class="highlight-blue">11/26/2018</label>
+        </div>
+        <div class="grid-item">
+          Investement Amount: <small>TWD </small><label class="highlight-blue">30,000 </label><small>(per month)</small>
+          <button pButton pRipple type="button" label="Adjust amount"
+            class="table-button p-button-outlined p-button-secondary"></button>
+        </div>
+        <div class="grid-item">
+          Change Account Number: <label class="highlight-blue">00000012345</label>
+          <i class="table-icon pi pi-pencil" (click)="changeAccountNumber()"></i>
+        </div>
+        <div class="grid-item">
+          Accumulated Investement amount: <small>TWD </small><label class="highlight-blue">5,000</label>
+        </div>
+        <div class="grid-item">
+          Charge Date: <label class="highlight-blue">1st of month</label><small>(Next payment date)</small>
+          <i class="table-icon pi pi-pencil"></i>
+        </div>
+        <div class="grid-item">
+          Current market value: <small>TWD </small><label class="highlight-blue">4,718</label>
+          <button pButton pRipple type="button" label="Redemption"
+            class="table-button p-button-outlined p-button-secondary"></button>
+        </div>
+        <div class="grid-item">
+          Status: <label class="highlight-blue">Monthly Charge</label>
+          <button pButton pRipple type="button" label="Suspension of Investement"
+            class="table-button p-button-outlined p-button-secondary"></button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+  <div class="center-button">
+    <p-button label="Return" styleClass="p-button-raised-text p-button-success"></p-button>
+  </div>
+</div>
+
+<!-- change account number dialog -->
+<p-dialog header="Change account number" [(visible)]="displayDialog" [style]="{width: '50vw'}" [baseZIndex]="10000">
+  <hr>
+  <div class="dialog-body">
+    <div>Please select your debit account number</div>
+    <br>
+    <p-dropdown [options]="currencies" [(ngModel)]="selectedCurrency" optionLabel="name" placeholder="Currency"></p-dropdown>
+    <p-dropdown [options]="accountNumbers" [(ngModel)]="selectedAccountNumber" optionLabel="name" placeholder="Account Number"></p-dropdown>
+    Account Balance
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button  (click)="displayDialog=false" label="Cancel" styleClass="p-button p-button-secondary p-button-text"></p-button>
+    <p-button  (click)="confirmDialog()" label="Confirm" styleClass="p-button-raised-text p-button-success"></p-button>
+  </ng-template>
+</p-dialog>

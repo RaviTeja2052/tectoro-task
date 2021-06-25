@@ -1,0 +1,52 @@
+.container  {
+  margin: 2rem;
+
+  .table-button {
+    float: right;
+    height: 32px;
+    margin-top: -8px;
+  }
+
+  .table-icon {
+    float: right;
+    margin-top: -8px;
+    font-size: 1.5rem;
+    color: #6f6feb;
+  }
+
+  .content-header {
+    .header-title {
+      display: inline-block;
+      font-size: 1rem;
+    }
+    button {
+      float: right;
+      margin-top: -1rem;
+      height: 32px;
+    }
+  }
+
+  .content-body {
+    .grid-container {
+      display: grid;
+      justify-content: space-around;
+      grid-template-columns: 1fr 1fr; /*Make the grid smaller than the container*/
+      grid-gap: 30px;
+      padding: 10px;
+    }
+
+    .highlight-blue {
+      color: rgb(111, 111, 235);
+    }
+  }
+
+}
+
+.dialog-body {
+  height: 175px;
+}
+
+.center-button {
+  margin-top: 2rem;
+  text-align: center;
+}
